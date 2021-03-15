@@ -1,6 +1,7 @@
-package com.dan.book.springboot.web.dto;
+package com.dan.book.springboot.web;
 
 import com.dan.book.springboot.service.posts.PostsService;
+import com.dan.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
