@@ -1,11 +1,19 @@
 package com.dan.book.springboot.web;
 
+import com.dan.book.springboot.domain.posts.Posts;
 import com.dan.book.springboot.service.posts.PostsService;
 import com.dan.book.springboot.web.dto.PostsResponseDto;
 import com.dan.book.springboot.web.dto.PostsSaveRequestDto;
 import com.dan.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 
 @RequiredArgsConstructor
 @RestController
@@ -35,4 +43,7 @@ public class PostApiController {
         postsService.delete(id);
         return id;
     }
+
+
+
 }

@@ -3,8 +3,7 @@ package com.dan.book.springboot.web;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.NoSuchElementException;
+import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class PostsExceptionController {
@@ -16,4 +15,13 @@ public class PostsExceptionController {
     }
 
     //TODO: url Error Exception
+    @ExceptionHandler(Exception.class)
+    private ModelAndView errorModelAndView(Exception ex){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/error_common");
+        modelAndView.addObject("exception", ex);
+
+        return modelAndView;
+    }
 }
+
