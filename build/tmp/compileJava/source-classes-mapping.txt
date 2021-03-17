@@ -1,4 +1,8 @@
+com/dan/book/springboot/domain/posts/Posts.java
+ com.dan.book.springboot.domain.posts.Posts
+com/dan/book/springboot/domain/posts/PostsRepository.java
+ com.dan.book.springboot.domain.posts.PostsRepository
+com/dan/book/springboot/domain/BaseTimeEntity.java
+ com.dan.book.springboot.domain.BaseTimeEntity
 com/dan/book/springboot/Application.java
  com.dan.book.springboot.Application
-com/dan/book/springboot/web/HelloController.java
- com.dan.book.springboot.web.HelloController

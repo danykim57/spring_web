@@ -6,13 +6,7 @@ import com.dan.book.springboot.web.dto.PostsResponseDto;
 import com.dan.book.springboot.web.dto.PostsSaveRequestDto;
 import com.dan.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 
 @RequiredArgsConstructor
