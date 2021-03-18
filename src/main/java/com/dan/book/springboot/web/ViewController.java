@@ -1,5 +1,7 @@
 package com.dan.book.springboot.web;
 
+import com.dan.book.springboot.config.auth.LoginUser;
+import com.dan.book.springboot.config.auth.dto.SessionUser;
 import com.dan.book.springboot.domain.posts.Posts;
 import com.dan.book.springboot.service.posts.PostsService;
 import com.dan.book.springboot.web.dto.PostsResponseDto;
@@ -13,19 +15,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class ViewController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+    public String index(Model model, @LoginUser SessionUser user, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
 
         model.addAttribute("posts", postsService.getPostsList(pageable));
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
         model.addAttribute("check",postsService.getListCheck(pageable));
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
 
         return "index";
     }
