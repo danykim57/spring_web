@@ -33,10 +33,19 @@ configurations {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
     compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude module: 'junit-platform-commons'
+    }
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+    testRuntimeOnly('org.junit.platform:junit-platform-engine')
+    testRuntimeOnly('org.junit.platform:junit-jupiter-commons')
+    testRuntimeOnly('org.junit.vintage:junit-vintage-engine')
+    testCompile('org.springframework.security:spring-security-test')
+
     compile('org.projectlombok:lombok')
+    annotationProcessor 'org.projectlombok:lombok'
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2')
     compile('org.springframework.boot:spring-boot-starter-mustache')
@@ -44,6 +53,8 @@ dependencies {
     testImplementation 'org.apache.httpcomponents:httpclient'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    compile 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    compile 'org.springframework.session:spring-session-jdbc'
 
 }
 
