@@ -32,16 +32,14 @@ configurations {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-
     compile('org.springframework.boot:spring-boot-starter-web')
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit-platform-commons'
     }
-    testImplementation('org.junit.jupiter:junit-jupiter-engine')
-    testImplementation('org.junit.platform:junit-platform-engine')
-    testImplementation('org.junit.platform:junit-jupiter-commons')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation('org.junit.vintage:junit-vintage-engine')
+
     testCompile('org.springframework.security:spring-security-test')
 
     compile('org.projectlombok:lombok')
