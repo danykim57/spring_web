@@ -23,7 +23,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'application'
 
-mainClassName = 'Application'
+mainClassName = 'com.dan.book.springboot.Application'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
