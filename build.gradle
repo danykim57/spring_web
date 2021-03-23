@@ -12,6 +12,12 @@ buildscript {
 }
 
 apply plugin: 'java'
+tasks.withType(JavaCompile) {
+    configure(options) {
+        options.compilerArgs << '-Xlint:deprecation' << '-Xlint:unchecked' // examples
+    }
+}
+
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
