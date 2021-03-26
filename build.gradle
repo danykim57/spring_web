@@ -21,7 +21,6 @@ tasks.withType(JavaCompile) {
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'application'
 
 mainClassName = 'com.dan.book.springboot.Application'
 
