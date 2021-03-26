@@ -9,12 +9,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 public class PostsService {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
     private final PostsRepository postsRepository;
 
     @Transactional
