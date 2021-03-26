@@ -19,6 +19,9 @@ import java.util.stream.Collectors;
 @Service
 public class PostsService {
 
+    @PersistenceContext
+    private EntityManager em;
+
     @Autowired
     private final PostsRepository postsRepository;
 
