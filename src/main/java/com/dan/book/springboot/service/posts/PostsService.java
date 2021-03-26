@@ -4,6 +4,7 @@ import com.dan.book.springboot.domain.posts.Posts;
 import com.dan.book.springboot.domain.posts.PostsRepository;
 import com.dan.book.springboot.web.dto.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -18,9 +19,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostsService {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
+    @Autowired
     private final PostsRepository postsRepository;
 
     @Transactional
