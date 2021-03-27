@@ -52,7 +52,7 @@ public class ViewController {
         return "posts-update";
     }
 
-    @GetMapping("/search")
+    @GetMapping("/search/*")
     public String searchResult(String keyword, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable, Model model) {
         Page<Posts> searchResult = postsService.search(keyword, pageable);
 
